@@ -1,0 +1,26 @@
+Questions
+
+1) What is the general trend in the curve?
+2) Are there parts of the curve that appear to be noisier than others? Why?
+3) How many trials do you need to get a smooth curve?
+4) Try different values for C (by changing LogisticRegression(C=10** -10)). What happens?
+
+Answers
+
+1) The general trend is a positively inclining linear curve.
+
+2) Some parts of the curve are more noisier than others. The possible reason
+for this is because we divide the data into the training set and test set randomly.
+So, assuming that there are bad images in the entire dataset, randomization does not
+guarantee that there is an even distribution of images to test and training subsets.
+So in any parts of the set, if the program is trained with bad images, it gives bad
+results when compared to good images and vice versa. This problem should diminish, if we increase
+the number of trials.
+
+3) 100 trials produce a somewhat smooth curve. 1000 give a nearly smooth curve; however I
+did not look at larger values.
+
+4) The number determines the inverse of regularization constant, hence the smaller the
+value put in, the output is regularized better to fit the logistics regression. As the
+C value is decreased, we can see that the curve gets less and less close to Logistic
+regression.
